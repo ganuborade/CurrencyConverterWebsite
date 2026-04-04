@@ -1,47 +1,200 @@
 <!DOCTYPE html>
-<!-- Coding By Ganesh Borade & Yogesh Khadke -->
 <html lang="en" dir="ltr">
-  <head>
+<head>
     <meta charset="utf-8">
-    <title>Currency Exchange web</title>
-    <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- FontAweome CDN Link for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>Currency Exchange</header>
-      <form action="#">
-        <div class="amount">
-          <p>Enter Amount</p>
-          <input type="text" value="1">
-        </div>
-        <div class="drop-list">
-          <div class="from">
-            <p>From</p>
-            <div class="select-box">
-              <img src="https://flagcdn.com/48x36/us.png" alt="flag">
-              <select> <!-- Options tag are inserted from JavaScript --> </select>
+    <title>FlowRate - Professional Currency Exchange</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-money-bill-wave"></i> FlowRate
             </div>
-          </div>
-          <div class="icon"><i class="fas fa-exchange-alt"></i></div>
-          <div class="to">
-            <p>To</p>
-            <div class="select-box">
-              <img src="https://flagcdn.com/48x36/af.png" alt="flag">
-              <select> <!-- Options tag are inserted from JavaScript --> </select>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-          </div>
+            <ul class="menu" id="menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="converter.html">Converter</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
         </div>
-        <div class="exchange-rate">Getting exchange rate...</div>
-        <button>Get Exchange Rate</button>
-      </form>
-      <div class="footer"><a class="footer-text" target="_blank" >By CSE 3RD YEAR</a></div>
-    </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content animate__animated animate__fadeInUp">
+            <h1>Real-time Currency Exchange</h1>
+            <p>Get instant exchange rates and convert any currency with ease</p>
+            <a href="converter.html" class="btn btn-primary">Start Converting</a>
+        </div>
+        <div class="hero-background">
+            <div class="circle circle1"></div>
+            <div class="circle circle2"></div>
+            <div class="circle circle3"></div>
+        </div>
+    </section>
+
+    <!-- Announcement Banner -->
+    <section class="announcement-banner">
+        <div class="container">
+            <div class="alert alert-info">
+                <i class="fas fa-exclamation-circle"></i>
+                <div class="alert-content">
+                    <strong>Important Notice:</strong> Exchange rates change constantly throughout the day. Please verify the current rates are correct before making any conversions or financial decisions.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose FlowRate?</h2>
+            <div class="features-grid">
+                <div class="feature-card animate__animated animate__fadeInUp">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Lightning Fast</h3>
+                    <p>Get instant exchange rates with real-time data updates every second</p>
+                </div>
+                <div class="feature-card animate__animated animate__fadeInUp">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Global Coverage</h3>
+                    <p>Convert between 160+ currencies from around the world</p>
+                </div>
+                <div class="feature-card animate__animated animate__fadeInUp">
+                    <div class="feature-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>100% Secure</h3>
+                    <p>Your data is encrypted and protected with industry-standard security</p>
+                </div>
+                <div class="feature-card animate__animated animate__fadeInUp">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Responsive Design</h3>
+                    <p>Works perfectly on desktop, tablet, and mobile devices</p>
+                </div>
+                <div class="feature-card animate__animated animate__fadeInUp">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Historical Data</h3>
+                    <p>Track currency trends and historical exchange rate charts</p>
+                </div>
+                <div class="feature-card animate__animated animate__fadeInUp">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Get help anytime with our dedicated customer support team</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Converter Section -->
+    <section class="quick-converter">
+        <div class="container">
+            <h2 class="section-title">Quick Conversion</h2>
+            <div class="converter-preview">
+                <div class="amount-box">
+                    <label>Amount</label>
+                    <input type="number" id="quickAmount" value="1" min="0">
+                </div>
+                <div class="currency-box">
+                    <div class="from-currency">
+                        <label>From</label>
+                        <div class="select-box">
+                            <img src="https://flagcdn.com/48x36/us.png" alt="flag">
+                            <select id="quickFrom"></select>
+                        </div>
+                    </div>
+                    <div class="swap-icon" id="swapQuick">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <div class="to-currency">
+                        <label>To</label>
+                        <div class="select-box">
+                            <img src="https://flagcdn.com/48x36/in.png" alt="flag">
+                            <select id="quickTo"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="result-box">
+                    <div class="exchange-result" id="quickResult">Getting exchange rate...</div>
+                </div>
+                <a href="converter.html" class="btn btn-secondary">Full Converter</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Convert Currency?</h2>
+            <p>Join thousands of users who trust FlowRate for their currency exchange needs</p>
+            <a href="converter.html" class="btn btn-light">Get Started Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>FlowRate</h4>
+                <p>Your trusted platform for real-time currency conversion and exchange rates.</p>
+                <div class="social-links">
+                    <a href="mailto:ganuborade9898@gmail.com"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="converter.html">Converter</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p><i class="fas fa-envelope"></i> ganuborade9898@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +91 9096040485</p>
+                <p><i class="fas fa-map-marker-alt"></i> Ambajogai, Maharashtra</p>
+            </div>ganuborade9898@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +91 9096040485</p>
+                <p><i class="fas fa-map-marker-alt"></i> Ambajogai, Maharashtra</p>
+            </div>
+
+            <p>&copy; 2024 FlowRate. All rights reserved. | Developed by <a href="#">Ganesh Borade</a></p>
+        </div>
+    </footer>
 
     <script src="js/country-list.js"></script>
-    <script src="js/script.js"></script>
-
-  </body>
+    <script src="js/main.js"></script>
+</body>
 </html>
