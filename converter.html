@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter - FlowRate</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-money-bill-wave"></i> FlowRate
+            </div>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="menu" id="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="converter.html" class="active">Converter</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Currency Converter</h1>
+            <p>Convert between any currencies with real-time exchange rates</p>
+        </div>
+    </section>
+
+    <!-- Main Converter Section -->
+    <section class="converter-section">
+        <div class="container">
+            <div class="converter-wrapper">
+                <!-- Converter Card -->
+                <div class="converter-card">
+                    <h2>Exchange Rate Calculator</h2>
+                    
+                    <form action="#">
+                        <!-- Amount Input -->
+                        <div class="form-group">
+                            <label for="amount">Amount</label>
+                            <input type="number" id="amount" value="1" step="0.01" min="0">
+                        </div>
+
+                        <!-- Currency Selection -->
+                        <div class="currency-selection">
+                            <div class="currency-box">
+                                <label>From</label>
+                                <div class="select-box">
+                                    <img id="fromFlag" src="https://flagcdn.com/48x36/us.png" alt="flag">
+                                    <select id="fromCurrency"></select>
+                                </div>
+                            </div>
+
+                            <div class="exchange-btn-container">
+                                <button type="button" class="exchange-btn" id="exchangeBtn" title="Swap currencies">
+                                    <i class="fas fa-exchange-alt"></i>
+                                </button>
+                            </div>
+
+                            <div class="currency-box">
+                                <label>To</label>
+                                <div class="select-box">
+                                    <img id="toFlag" src="https://flagcdn.com/48x36/in.png" alt="flag">
+                                    <select id="toCurrency"></select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Result -->
+                        <div class="result-section">
+                            <div class="exchange-rate-display" id="exchangeRate">
+                                Getting exchange rate...
+                            </div>
+                            <div class="rate-info" id="rateInfo"></div>
+                        </div>
+
+                        <!-- Buttons -->
+                        <button type="button" class="btn btn-convert" id="convertBtn">
+                            <i class="fas fa-calculator"></i> Convert Now
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Info Panel -->
+                <div class="info-panel">
+                    <h3><i class="fas fa-info-circle"></i> About Exchange Rates</h3>
+                    <div class="info-content">
+                        <p><strong>Real-time Data:</strong> Our exchange rates are updated every second from reliable sources.</p>
+                        <p><strong>Accurate Conversion:</strong> Get precise conversion results for your currency needs.</p>
+                        <p><strong>Multiple Currencies:</strong> We support over 160 currencies from around the world.</p>
+                        <p><strong>No Hidden Fees:</strong> The rates shown are the true market rates without any markups.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Multi-Currency Converter -->
+    <section class="multi-converter-section">
+        <div class="container">
+            <h2 class="section-title">Convert Multiple Currencies</h2>
+            <div class="multi-converter-grid">
+                <div class="multi-converter-card">
+                    <div class="input-group">
+                        <label>Amount (USD)</label>
+                        <input type="number" class="multi-amount" value="100" min="0" step="0.01">
+                    </div>
+                    <div id="multiResults"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="comparison-section">
+        <div class="container">
+            <h2 class="section-title">Live Exchange Rates</h2>
+            <div class="table-wrapper">
+                <table class="rates-table">
+                    <thead>
+                        <tr>
+                            <th>Currency</th>
+                            <th>Code</th>
+                            <th>Rate (vs USD)</th>
+                            <th>Change</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ratesTableBody">
+                        <tr>
+                            <td colspan="4" style="text-align: center; padding: 20px;">Loading rates...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>FlowRate</h4>
+                <p>Your trusted platform for real-time currency conversion and exchange rates.</p>
+                <div class="social-links">
+                    <a href="mailto:ganuborade9898@gmail.com"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="converter.html">Converter</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p><i class="fas fa-envelope"></i> ganuborade9898@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +91 9096040485</p>
+                <p><i class="fas fa-map-marker-alt"></i> Ambajogai, Maharashtra</p>
+            </div>ganuborade9898@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +91 9096040485</p>
+                <p><i class="fas fa-map-marker-alt"></i> Ambajogai, Maharashtra</p>
+            </div>
+
+            <p>&copy; 2024 FlowRate. All rights reserved. | Developed by <a href="#">Ganesh Borade</a></p>
+        </div>
+    </footer>
+
+    <script src="country-list.js"></script>
+    <script src="converter.js"></script>
+</body>
+</html>
